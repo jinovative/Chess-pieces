@@ -1,4 +1,4 @@
-interface ChessPiece {
+interface ChessPiece2 {
   int getRow();
   int getColumn();
   Color getColor();
@@ -7,7 +7,10 @@ interface ChessPiece {
 }
 
 
-public class Knight implements ChessPiece {
+public class Knight implements ChessPiece2 {
+  private int row;
+  private int col;
+  private Color color;
   @Override
   public int getRow() {
     return 0;
