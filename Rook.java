@@ -1,4 +1,4 @@
-interface ChessPiece5 {
+interface ChessPiece {
   int getRow();
   int getColumn();
   Color getColor();
@@ -6,7 +6,7 @@ interface ChessPiece5 {
   boolean canKill(ChessPiece piece);
 }
 
-public class Rook implements ChessPiece5 {
+public class Rook implements ChessPiece {
   private int row;
   private int col;
   private Color color;

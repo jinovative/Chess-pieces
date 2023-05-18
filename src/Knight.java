@@ -1,28 +1,22 @@
-interface ChessPiece {
-  int getRow();
-  int getColumn();
-  Color getColor();
-  boolean canMove(int row, int col);
-  boolean canKill(ChessPiece piece);
-}
 
-public class Pawn implements ChessPiece {
+
+public class Knight implements ChessPiece {
   private int row;
   private int col;
   private Color color;
-  @Override
+
   public int getRow() {
-    return 0;
+    return row;
   }
 
   @Override
   public int getColumn() {
-    return 0;
+    return col;
   }
 
   @Override
   public Color getColor() {
-    return null;
+    return color;
   }
 
   @Override
@@ -35,3 +29,4 @@ public class Pawn implements ChessPiece {
     return false;
   }
 }
+
