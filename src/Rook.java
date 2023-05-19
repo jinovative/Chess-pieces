@@ -19,11 +19,18 @@ public class Rook implements ChessPiece {
 
     @Override
     public boolean canMove(int row, int col) {
+        int rowMovement = this.row - row;
+        int colMovement = this.col - col;
+
+        if (this.row == row || this.col == col) {
+            return true;
+        }
+
         return false;
     }
 
     @Override
     public boolean canKill(ChessPiece piece) {
-        return false;
+        return canMove(piece.getRow(), piece.getColumn());
     }
 }
