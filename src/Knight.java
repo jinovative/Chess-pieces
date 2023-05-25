@@ -1,5 +1,3 @@
-
-
 /**
  * Represents a knight chess piece.
  */
