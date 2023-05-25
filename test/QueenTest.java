@@ -3,7 +3,15 @@ import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 
+/**
+ * Testing for the Queen class.
+ */
 public class QueenTest {
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testNegativeValue() {
+    new Queen(-1, 0, Color.BLACK);
+  }
 
   @Test
   public void testCanMove() {

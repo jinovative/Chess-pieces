@@ -3,7 +3,15 @@ import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 
+/**
+ * Testing for the Rook class.
+ */
 public class RookTest {
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testNegativeValue() {
+    new Rook(-1, 0, Color.BLACK);
+  }
 
   @Test
   public void testCanMove() {

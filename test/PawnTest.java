@@ -3,7 +3,15 @@ import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 
+/**
+ * Testing for the Pawn class.
+ */
 public class PawnTest {
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testNegativeValue() {
+    new Pawn(-1, 0, Color.BLACK);
+  }
 
   @Test
   public void testCanMove() {

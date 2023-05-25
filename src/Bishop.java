@@ -9,11 +9,15 @@ public class Bishop implements ChessPiece {
   /**
    * Constructs Bishop object with row, column, and color.
    *
-   * @param row position of the bishop on board
-   * @param col position of the bishop on board
+   * @param row   position of the bishop on board
+   * @param col   position of the bishop on board
    * @param color color of the bishop (BLACK or WHITE)
+   * @throws IllegalArgumentException if the row or column value is negative
    */
   public Bishop(int row, int col, Color color) {
+    if (row < 0 || col < 0) {
+      throw new IllegalArgumentException("Invalid row or column value");
+    }
     this.row = row;
     this.col = col;
     this.color = color;
@@ -49,10 +53,7 @@ public class Bishop implements ChessPiece {
     int rowMovement = this.row - row;
     int colMovement = this.col - col;
 
-    if (rowMovement == colMovement || rowMovement == -colMovement) {
-      return true;
-    }
-    return false;
+    return (rowMovement == colMovement || rowMovement == -colMovement);
   }
 
   /**
@@ -71,10 +72,6 @@ public class Bishop implements ChessPiece {
     int rowMovement = this.row - targetRow;
     int colMovement = this.col - targetCol;
 
-    if (rowMovement == colMovement || rowMovement == -colMovement) {
-      return true;
-    }
-
-    return false;
+    return (rowMovement == colMovement || rowMovement == -colMovement);
   }
 }

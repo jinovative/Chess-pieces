@@ -12,8 +12,15 @@ public class Knight implements ChessPiece {
    * @param row position of the knight on board
    * @param col position of the knight on board
    * @param color color of the knight (BLACK or WHITE)
+   * @throws IllegalArgumentException if the row or column value is negative
    */
   public Knight(int row, int col, Color color) {
+    if (row < 0 || col < 0) {
+      throw new IllegalArgumentException("Invalid row or column value");
+    }
+    if (row < 0 || row > 7) {
+      throw new IllegalArgumentException("Invalid row value");
+    }
     this.row = row;
     this.col = col;
     this.color = color;
@@ -48,18 +55,14 @@ public class Knight implements ChessPiece {
     int rowMovement = this.row - row;
     int colMovement = this.col - col;
 
-    if ((rowMovement == 2 && colMovement == 1)
+    return ((rowMovement == 2 && colMovement == 1)
             || (rowMovement == 1 && colMovement == 2)
             || (rowMovement == -2 && colMovement == 1)
             || (rowMovement == -1 && colMovement == 2)
             || (rowMovement == 2 && colMovement == -1)
             || (rowMovement == 1 && colMovement == -2)
             || (rowMovement == -2 && colMovement == -1)
-            || (rowMovement == -1 && colMovement == -2)) {
-      return true;
-    }
-
-    return false;
+            || (rowMovement == -1 && colMovement == -2));
   }
 
   /**

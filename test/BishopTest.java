@@ -3,7 +3,15 @@ import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 
+/**
+ * Testing for the Bishop class.
+ */
 public class BishopTest {
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testNegativeValue() {
+    new Bishop(-1, 0, Color.BLACK);
+  }
 
   @Test
   public void testCanMove() {

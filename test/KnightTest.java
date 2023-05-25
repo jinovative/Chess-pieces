@@ -3,7 +3,15 @@ import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 
+/**
+ * Testing for the Knight class.
+ */
 public class KnightTest {
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testNegativeValue() {
+    new Knight(-1, 0, Color.BLACK);
+  }
 
   @Test
   public void testCanMove() {
